@@ -1,0 +1,34 @@
+<div class="container-fluid">
+	
+	<%= render 'verb_view_common/links' %>
+
+	<br>
+	<h1 class="caption-title">View All German Verb</h1>
+	<hr><br>
+
+	<div class="col-md-offset-2 col-md-8">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Verb</th>
+					<th>Description</th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @verbs.each do |verb| %>
+					<tr>
+						<td><%= link_to verb.title, verb_path(verb) %></td>
+						<td><%= verb.description %></td>
+						<td>
+							<%= link_to "Edit", edit_verb_path(verb), :class => "btn btn-success btn-xs" %>
+							<%= link_to "Delete", verb_path(verb), :method => :delete, :class => "btn btn-danger btn-xs", data: { confirm: "Are you sure?" } %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>

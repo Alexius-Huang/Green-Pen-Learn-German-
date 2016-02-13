@@ -1,0 +1,11 @@
+<div class="container-fluid">
+	<%= link_to "Back", verbs_path, :class => "btn btn-primary pull-right" %>
+
+	<br>
+	<h1 class="caption-title">Edit German Verb</h1>
+	<hr><br>
+
+	<div class="col-md-offset-4 col-md-4">
+		<%= render 'verb_view_common/form', verb: @verb %>
+	</div>
+</div>
