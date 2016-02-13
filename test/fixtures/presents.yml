@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_person: MyString
+  second_person: MyString
+  third_person: MyString
+  plural_first_person: MyString
+  plural_second_person: MyString
+  plural_third_person: MyString
+  description: MyText
+
+two:
+  first_person: MyString
+  second_person: MyString
+  third_person: MyString
+  plural_first_person: MyString
+  plural_second_person: MyString
+  plural_third_person: MyString
+  description: MyText
