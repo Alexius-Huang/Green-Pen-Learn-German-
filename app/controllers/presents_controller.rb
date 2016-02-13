@@ -13,7 +13,6 @@ class PresentsController < ApplicationController
 			"description"
 		 ]
 		@grammer = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
-
 	end
 
 	def create
@@ -23,6 +22,30 @@ class PresentsController < ApplicationController
 			redirect_to verb_path(@verb), notice: "Verb : #{@verb.title} has Successfully Updated Information!"
 		else
 			render :new
+		end
+	end
+
+	def edit
+		@present = @verb.presents.last
+		@personalpronomen = [
+			"first_person", 
+			"second_person", 
+			"third_person",
+			"plural_first_person",
+			"plural_second_person",
+			"plural_third_person",
+			"description"
+		 ]
+		@grammer = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
+	end
+
+	def update
+		@present = @verb.presents.last
+
+		if @present.update(present_params)
+			redirect_to verb_path(@verb), notice: "Verb : #{@verb.title} has Successfully Updated Information!"
+		else
+			render :edit
 		end
 	end
 
@@ -39,7 +62,8 @@ class PresentsController < ApplicationController
 			:third_person,
 			:plural_first_person,
 			:plural_second_person,
-			:plural_third_person
+			:plural_third_person,
+			:description
 		)
 	end
 

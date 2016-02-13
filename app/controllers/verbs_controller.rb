@@ -34,7 +34,6 @@ class VerbsController < ApplicationController
 		else
 			@present = @personalpronomen = @grammer = nil
 		end
-
 	end
 
 	def edit
