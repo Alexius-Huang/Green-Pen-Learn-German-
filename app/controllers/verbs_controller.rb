@@ -1,7 +1,7 @@
-class VerbController < ApplicationController
-
+class VerbsController < ApplicationController
+	
 	def index
-		@verb = Verb.all
+		@verbs = Verb.all
 	end
 
 	def new
@@ -12,7 +12,7 @@ class VerbController < ApplicationController
 		@verb = Verb.create(verb_params)
 
 		if @verb.save
-			redirect_to verbs_path, notice: "New Verb Successfully Created!"
+			redirect_to verbs_path, notice: "New Verb Has Successfully Created!"
 		else
 			render :new
 		end
@@ -30,7 +30,7 @@ class VerbController < ApplicationController
 		@verb = Verb.find(params[:id])
 
 		if @verb.update(verb_params)
-			redirect_to verb_path(@verb), notice: "Verb : #{@verb.title} has Successfully Updated!"
+			redirect_to verb_path(@verb), notice: "The Verb : #{@verb.title} Has Successfully Updated!"
 		else
 			render :edit
 		end
@@ -38,9 +38,9 @@ class VerbController < ApplicationController
 
 	def destroy
 		@verb = Verb.find(params[:id])
-		verb_title = @verb.title
+		verb_name = @verb.title
 		@verb.destroy
-		redirect_to verbs_path, alert: "Verb : #{verb_title} has Successfully Deleted!"
+		redirect_to verbs_path, danger: "The Verb : #{verb_name} Has Been Destroyed!"
 	end
 
 	private
