@@ -1,12 +1,26 @@
 <div class="col-xs-6 col-md-3">
   <div class="thumbnail">
-		<% if false %>
+		<% unless present.nil? %>
+			<table class="table table-hover">
+				<caption class="caption-title">Präsent</caption>
+				<% personalpronomen.zip(grammer).each do |personalpronomen, grammer| %>
+					<tr>
+						<th><%= personalpronomen %></th>
+						<td><%= grammer %></td>
+					</tr>
+				<% end %>
+				<tr colspan="2">
+					<td>
+						<%= link_to "Edit", "#", :class => "btn btn-sm btn-primary pull-right" %>
+					</td>
+				</tr>
+			</table>
 		<% else %>
       <img src="http://images.vectorhq.com/images/previews/cd1/blue-question-mark-clip-art-99583.png" alt="question" style="width: 170px; height= 170px; padding-top: 10px;">
 			<div class="caption">
 				<h3>Präsent</h3>
 				<p>There is no "präsent" information in this verb currently.</p>
-				<%= link_to "Add Information", verbs_path, :class => "btn btn-sm btn-success" %>
+				<%= link_to "Add Information", new_verb_present_path(verb), :class => "btn btn-sm btn-success" %>
 			</div>
 		<% end %>
 	</div>
