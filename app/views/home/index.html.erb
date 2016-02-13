@@ -1,0 +1,9 @@
+<div class="container-fluid">
+	<h1 class="caption-title">Welkommen Grüne Stift!</h1>
+	<hr><br>
+
+	<% ["german_discuss_forum", "german_verb_conjugation", "german_worterbuch"].each do |route| %>
+		<%= render "home_index/#{route}" %>
+	<% end %>	
+
+</div>
