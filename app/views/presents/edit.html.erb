@@ -1,0 +1,11 @@
+<div class="container-fluid">
+	<%= link_to "Back", verb_path(@verb), :class => "btn btn-primary pull-right" %>
+	
+	<br>
+	<h1 class="caption-title">Update Präsent Information</h1>
+	<hr><br>
+
+	<div class="col-md-offset-4 col-md-4">
+		<%= render 'verb_view_common/present/form', present: @present, verb: @verb, personalpronomen: @personalpronomen, grammer: @grammer %>
+	</div>
+</div>
