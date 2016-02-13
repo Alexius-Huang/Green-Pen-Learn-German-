@@ -3,6 +3,27 @@ class PresentsController < ApplicationController
 
 	def new  
 		@present = @verb.presents.new
+		@personalpronomen = [
+			"first_person", 
+			"second_person", 
+			"third_person",
+			"plural_first_person",
+			"plural_second_person",
+			"plural_third_person",
+			"description"
+		 ]
+		@grammer = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
+
+	end
+
+	def create
+		@present = @verb.presents.build(present_params)
+
+		if @present.save
+			redirect_to verb_path(@verb), notice: "Verb : #{@verb.title} has Successfully Updated Information!"
+		else
+			render :new
+		end
 	end
 
 	private

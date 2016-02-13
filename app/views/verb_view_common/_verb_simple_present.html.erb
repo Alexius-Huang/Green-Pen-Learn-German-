@@ -9,8 +9,10 @@
 						<td><%= grammer %></td>
 					</tr>
 				<% end %>
-				<tr colspan="2">
-					<td>
+				<tr><th colspan="2">Further Explaination</th></tr>
+				<tr><td colspan="2"><%= present.description %></td></tr>
+				<tr>
+					<td colspan="2">
 						<%= link_to "Edit", "#", :class => "btn btn-sm btn-primary pull-right" %>
 					</td>
 				</tr>
