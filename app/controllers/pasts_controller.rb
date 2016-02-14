@@ -55,7 +55,7 @@ class PastsController < ApplicationController
 		@verb = Verb.find(params[:verb_id])
 	end
 
-	def present_params
+	def past_params
 		params.require(:past).permit(
 			:first_person,
 			:second_person,
