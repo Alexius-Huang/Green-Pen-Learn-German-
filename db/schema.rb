@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214131410) do
+ActiveRecord::Schema.define(version: 20160214163942) do
 
   create_table "pasts", force: :cascade do |t|
     t.string   "first_person"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20160214131410) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.integer  "verb_id"
+  end
+
+  create_table "perfects", force: :cascade do |t|
+    t.string   "first_person"
+    t.string   "second_person"
+    t.string   "third_person"
+    t.string   "plural_first_person"
+    t.string   "plural_second_person"
+    t.string   "plural_third_person"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "presents", force: :cascade do |t|

@@ -1,0 +1,2 @@
+class PerfectsController < ApplicationController
+end
