@@ -3,7 +3,7 @@ class PastsController < ApplicationController
 
 	def new  
 		@past = @verb.pasts.new
-		@personalpronomen = [
+		@personalpronomen_past = [
 			"first_person", 
 			"second_person", 
 			"third_person",
@@ -12,7 +12,7 @@ class PastsController < ApplicationController
 			"plural_third_person",
 			"description"
 		 ]
-		@grammer = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
+		@grammer_past = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 	def create
@@ -27,7 +27,7 @@ class PastsController < ApplicationController
 
 	def edit
 		@past = @verb.pasts.last
-		@personalpronomen = [
+		@personalpronomen_past = [
 			"first_person", 
 			"second_person", 
 			"third_person",
@@ -36,7 +36,7 @@ class PastsController < ApplicationController
 			"plural_third_person",
 			"description"
 		 ]
-		@grammer = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
+		@grammer_past = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 	def update
