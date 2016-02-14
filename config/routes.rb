@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :verbs do
-    resources :presents
+    [:presents, :pasts].each do |verb_tense|
+      resources verb_tense
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

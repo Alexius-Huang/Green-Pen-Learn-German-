@@ -20,6 +20,7 @@ class VerbsController < ApplicationController
 
 	def show
 		@verb = Verb.find(params[:id])
+		
 		if @verb.presents.any?
 			@present = @verb.presents.last
 			@personalpronomen = ['ich', 'du', 'er/es/sie', 'wir', 'ihr', 'Sie/sie']
@@ -33,6 +34,21 @@ class VerbsController < ApplicationController
 			]
 		else
 			@present = @personalpronomen = @grammer = nil
+		end
+
+		if @verb.pasts.any?
+			@past = @verb.pasts.last
+			@personalpronomen_past = ['ich', 'du', 'er/es/sie', 'wir', 'ihr', 'Sie/sie']
+			@grammer_past = [
+				@past.first_person,
+				@past.second_person,
+				@past.third_person,
+				@past.plural_first_person,
+				@past.plural_second_person,
+				@past.plural_third_person
+			]
+		else
+			@past = @personalpronomen_past = @grammer_past = nil
 		end
 	end
 
