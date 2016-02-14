@@ -50,6 +50,21 @@ class VerbsController < ApplicationController
 		else
 			@past = @personalpronomen_past = @grammer_past = nil
 		end
+
+		if @verb.perfects.any?
+			@perfect = @verb.perfects.last
+			@personalpronomen_perfect = ['ich', 'du', 'er/es/sie', 'wir', 'ihr', 'Sie/sie']
+			@grammer_perfect = [
+				@perfect.first_person,
+				@perfect.second_person,
+				@perfect.third_person,
+				@perfect.plural_first_person,
+				@perfect.plural_second_person,
+				@perfect.plural_third_person
+			]
+		else
+			@perfect = @personalpronomen_perfect = @grammer_perfect = nil
+		end
 	end
 
 	def edit

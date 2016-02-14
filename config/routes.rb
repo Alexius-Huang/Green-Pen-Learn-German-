@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :verbs do
-    [:presents, :pasts].each do |verb_tense|
+    [:presents, :pasts, :perfects].each do |verb_tense|
       resources verb_tense
     end
   end
