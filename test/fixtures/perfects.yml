@@ -7,6 +7,8 @@ one:
   plural_first_person: MyString
   plural_second_person: MyString
   plural_third_person: MyString
+  description: MyText
+  verb_id: 1
 
 two:
   first_person: MyString
@@ -15,3 +17,5 @@ two:
   plural_first_person: MyString
   plural_second_person: MyString
   plural_third_person: MyString
+  description: MyText
+  verb_id: 1

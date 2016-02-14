@@ -7,6 +7,8 @@ class CreatePerfects < ActiveRecord::Migration
       t.string :plural_first_person
       t.string :plural_second_person
       t.string :plural_third_person
+      t.text :description
+      t.integer :verb_id
 
       t.timestamps null: false
     end
