@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :administrators
   root 'home#index'
 
   resources :verbs do
