@@ -1,4 +1,5 @@
 class PerfectsController < ApplicationController
+	before_action :authenticate_user!
 	before_action :find_verb
 	before_action :setup_verb_tense_parameter
 
