@@ -48,14 +48,21 @@ body {
 		background-color: rgba(255,255,255,0.8);
 	}
 
-	div.thumbnail:hover, div.optional:hover {
-		background-color: rgba(38,101,72,0.5);
+	div.thumbnail:hover, div.optional:hover{
+		background-color: rgba(138,201,172,0.5);
+		p,h1,h2,h3,h4,h5,h6,label {
+			color: white;
+		}
+	}
+
+	div.required:hover {
+		background-color: rgba(241,179,172,0.5);
 		p,h1,h2,h3,h4,h5,h6,label {
 			color: white;
 		}
 	}
 	
-	div.optional {
+	div.optional, div.required {
 		background-color: rgba(255,255,255,0.8);		
 		padding: 10px;
 		border-radius: 5px;
