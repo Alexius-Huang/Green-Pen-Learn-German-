@@ -23,8 +23,8 @@ class VerbsController < ApplicationController
 		
 		if @verb.presents.any?
 			@present = @verb.presents.last
-			@personalpronomen = ['ich', 'du', 'er/es/sie', 'wir', 'ihr', 'Sie/sie']
-			@grammer = [
+			@personalpronomen_present = ['ich', 'du', 'er/es/sie', 'wir', 'ihr', 'Sie/sie']
+			@grammer_present = [
 				@present.first_person,
 				@present.second_person,
 				@present.third_person,
@@ -33,7 +33,7 @@ class VerbsController < ApplicationController
 				@present.plural_third_person
 			]
 		else
-			@present = @personalpronomen = @grammer = nil
+			@present = @personalpronomen_present = @grammer_present = nil
 		end
 
 		if @verb.pasts.any?

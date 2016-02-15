@@ -16,9 +16,13 @@
 
 	<div class="row">
 		<div class="col-md-offset-1" style="padding-left: 140px;">
-			<%= render 'verb_view_common/verb_present', present: @present, personalpronomen: @personalpronomen, grammer: @grammer, verb: @verb %>
-			<%= render 'verb_view_common/verb_past', past: @past, personalpronomen_past: @personalpronomen_past, grammer_past: @grammer_past, verb: @verb %>	
-			<%= render 'verb_view_common/verb_perfect', perfect: @perfect, personalpronomen_perfect: @personalpronomen_perfect, grammer_perfect: @grammer_perfect, verb: @verb %>
+			<% [
+						["present", @present, @personalpronomen_present, @grammer_present	],
+						["past", 		@past, 		@personalpronomen_past,		 @grammer_past		],
+						["perfect", @perfect, @personalpronomen_perfect, @grammer_perfect	]
+					].each do |partial, verb_tense, personalpronomen, grammer| %>
+				<%= render "verb_view_common/verb_tense/verb_#{partial}", verb_tense: verb_tense, personalpronomen: personalpronomen, grammer: grammer, verb: @verb %>
+			<% end %>
 		</div>
 	</div>
 

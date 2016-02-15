@@ -1,0 +1,8 @@
+<% personalpronomen.zip(grammer).each do |personalpronomen, grammer| %>
+	<tr>
+		<td><%= personalpronomen %></td>
+		<th><%= grammer %></th>
+	</tr>
+<% end %>
+<tr><th colspan="2" class="header-caption">Further Explaination</th></tr>
+<tr><td colspan="2"><%= verb_tense.description %></td></tr>

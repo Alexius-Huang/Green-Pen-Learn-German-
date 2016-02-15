@@ -1,5 +1,5 @@
 class Verb < ActiveRecord::Base
-	has_many :presents
-	has_many :pasts
-	has_many :perfects
+	[:presents, :pasts, :perfects].each do |verb_tense|
+		has_many verb_tense, dependent: :destroy
+	end
 end

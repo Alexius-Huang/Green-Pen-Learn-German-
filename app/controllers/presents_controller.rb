@@ -1,18 +1,9 @@
 class PresentsController < ApplicationController
 	before_action :find_verb
+	before_action :setup_verb_tense_parameter, only: [:new, :edit]
 
 	def new  
 		@present = @verb.presents.new
-		@personalpronomen = [
-			"first_person", 
-			"second_person", 
-			"third_person",
-			"plural_first_person",
-			"plural_second_person",
-			"plural_third_person",
-			"description"
-		 ]
-		@grammer = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 	def create
@@ -27,16 +18,6 @@ class PresentsController < ApplicationController
 
 	def edit
 		@present = @verb.presents.last
-		@personalpronomen = [
-			"first_person", 
-			"second_person", 
-			"third_person",
-			"plural_first_person",
-			"plural_second_person",
-			"plural_third_person",
-			"description"
-		 ]
-		@grammer = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 	def update
@@ -67,4 +48,16 @@ class PresentsController < ApplicationController
 		)
 	end
 
+	def setup_verb_tense_parameter
+		@personalpronomen_present = [
+			"first_person", 
+			"second_person", 
+			"third_person",
+			"plural_first_person",
+			"plural_second_person",
+			"plural_third_person",
+			"description"
+		 ]
+		@grammer_present = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
+	end
 end

@@ -1,18 +1,9 @@
 class PerfectsController < ApplicationController
 	before_action :find_verb
+	before_action :setup_verb_tense_parameter
 
 	def new  
 		@perfect = @verb.perfects.new
-		@personalpronomen_perfect = [
-			"first_person", 
-			"second_person", 
-			"third_person",
-			"plural_first_person",
-			"plural_second_person",
-			"plural_third_person",
-			"description"
-		 ]
-		@grammer_perfect = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 	def create
@@ -27,16 +18,6 @@ class PerfectsController < ApplicationController
 
 	def edit
 		@perfect = @verb.perfects.last
-		@personalpronomen_perfect = [
-			"first_person", 
-			"second_person", 
-			"third_person",
-			"plural_first_person",
-			"plural_second_person",
-			"plural_third_person",
-			"description"
-		 ]
-		@grammer_perfect = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 	def update
@@ -65,6 +46,19 @@ class PerfectsController < ApplicationController
 			:plural_third_person,
 			:description
 		)
+	end
+
+	def setup_verb_tense_parameter
+		@personalpronomen_perfect = [
+			"first_person", 
+			"second_person", 
+			"third_person",
+			"plural_first_person",
+			"plural_second_person",
+			"plural_third_person",
+			"description"
+		 ]
+		@grammer_perfect = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 end

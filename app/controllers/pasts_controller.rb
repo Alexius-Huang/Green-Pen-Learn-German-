@@ -1,18 +1,9 @@
 class PastsController < ApplicationController
 	before_action :find_verb
+	before_action :setup_verb_tense_parameter, only: [:new, :edit]
 
 	def new  
-		@past = @verb.pasts.new
-		@personalpronomen_past = [
-			"first_person", 
-			"second_person", 
-			"third_person",
-			"plural_first_person",
-			"plural_second_person",
-			"plural_third_person",
-			"description"
-		 ]
-		@grammer_past = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
+		@past = @verb.pasts.new	
 	end
 
 	def create
@@ -27,16 +18,6 @@ class PastsController < ApplicationController
 
 	def edit
 		@past = @verb.pasts.last
-		@personalpronomen_past = [
-			"first_person", 
-			"second_person", 
-			"third_person",
-			"plural_first_person",
-			"plural_second_person",
-			"plural_third_person",
-			"description"
-		 ]
-		@grammer_past = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 	def update
@@ -65,6 +46,19 @@ class PastsController < ApplicationController
 			:plural_third_person,
 			:description
 		)
+	end
+
+	def setup_verb_tense_parameter
+		@personalpronomen_past = [
+			"first_person", 
+			"second_person", 
+			"third_person",
+			"plural_first_person",
+			"plural_second_person",
+			"plural_third_person",
+			"description"
+		 ]
+		@grammer_past = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 end
