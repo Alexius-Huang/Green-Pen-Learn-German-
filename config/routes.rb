@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :articles
 
   get 'administrators/manage_users'
   get 'administrators/manage_admins'
