@@ -3,14 +3,7 @@
 		<% unless present.nil? %>
 			<table class="table table-hover">
 				<caption class="caption-title"><h3>Präsent</h3></caption>
-				<% personalpronomen_present.zip(grammer_present).each do |personalpronomen, grammer| %>
-					<tr>
-						<th><%= personalpronomen %></th>
-						<td><%= grammer %></td>
-					</tr>
-				<% end %>
-				<tr><th colspan="2" class="header-caption">Further Explaination</th></tr>
-				<tr><td colspan="2"><%= present.description %></td></tr>
+				<%= render 'verb_view_common/thumbnail_partial', personalpronomen: personalpronomen, grammer: grammer, verb_tense: present %>
 				<tr>
 					<td colspan="2">
 						<%= link_to "Edit", edit_verb_present_path(verb, present), :class => "btn btn-sm btn-primary pull-right" %>
