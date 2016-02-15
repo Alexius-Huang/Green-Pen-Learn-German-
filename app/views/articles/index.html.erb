@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<%= link_to "Back", root_path, :class => "btn btn-primary pull-right" %>
+	<% unless current_user.nil?  %>
+		<%= link_to "New Article", new_article_path, :class => "btn btn-warning pull-right" %>
+	<% end %>
+
+	<div class="col-md-offset-2 col-md-8">
+		<h1 class="caption-title">Articles</h1>
+		<hr>
+
+		<table class="table table-hover">
+			<thead>
+			</thead>
+				<tr>
+					<th>Title</th>
+					<th>Created By</th>
+					<th>Created At</th>
+				</tr>
+			<tbody>
+				<% @articles.each do |article| %>
+					<tr>
+						<td><%= link_to article.title, article_path(article) %></td>
+						<td><%= article.user.username %></td>
+						<td><%= article.created_at.to_s(:long) %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
