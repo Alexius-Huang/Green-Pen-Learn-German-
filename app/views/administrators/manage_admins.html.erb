@@ -22,7 +22,7 @@
 						<% if current_user == admin %>
 							<td>This is you!</td>
 						<% else %>
-							<td><%= link_to "Cancel Admin", "#" %></td>
+							<td><%= link_to "Cancel Admin", administrators_manage_admins_path(admin), :method => :patch, :class => "btn btn-danger btn-xs", data: { confirm: "Are you sure to cancel the administrator?" } %></td>
 						<% end %>
 					</tr>
 				<% end %>
