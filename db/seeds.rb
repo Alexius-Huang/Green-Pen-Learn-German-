@@ -74,4 +74,5 @@ should_generate_perfect_tense_for_first_verb = sample_verb.perfects.create(
 	description: sample_perfect_tense[6]	
 )
 
-puts "Complete!"
+puts "Complete!\n"
+puts "Seed fild running processing success! Enjoy!"
