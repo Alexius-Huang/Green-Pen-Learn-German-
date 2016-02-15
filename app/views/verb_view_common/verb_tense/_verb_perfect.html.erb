@@ -6,7 +6,9 @@
 				<%= render 'verb_view_common/thumbnail_partial', personalpronomen: personalpronomen, grammer: grammer, verb_tense: verb_tense %>
 				<tr>
 					<td colspan="2">
-						<%= link_to "Edit", edit_verb_perfect_path(verb, verb_tense), :class => "btn btn-sm btn-primary pull-right" %>
+						<% if is_admin %>
+							<%= link_to "Edit", edit_verb_perfect_path(verb, verb_tense), :class => "btn btn-sm btn-primary pull-right" %>
+						<% end %>
 					</td>
 				</tr>
 			</table>
