@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	
-	<%= render 'verb_view_common/links' %>
+	<%= render 'verb_view_common/links', is_admin: current_user.administrator %>
 
 	<br>
 	<h1 class="caption-title">View All German Verb</h1>
@@ -21,10 +21,12 @@
 					<tr>
 						<td><%= link_to verb.title, verb_path(verb) %></td>
 						<td><%= verb.description %></td>
-						<td>
-							<%= link_to "Edit", edit_verb_path(verb), :class => "btn btn-success btn-xs" %>
-							<%= link_to "Delete", verb_path(verb), :method => :delete, :class => "btn btn-danger btn-xs", data: { confirm: "Are you sure?" } %>
-						</td>
+						<% if current_user.administrator %>
+							<td>
+								<%= link_to "Edit", edit_verb_path(verb), :class => "btn btn-success btn-xs" %>
+								<%= link_to "Delete", verb_path(verb), :method => :delete, :class => "btn btn-danger btn-xs", data: { confirm: "Are you sure?" } %>
+							</td>
+						<% end %>
 					</tr>
 				<% end %>
 			</tbody>

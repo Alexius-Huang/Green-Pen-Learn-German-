@@ -15,7 +15,9 @@
 			<div class="caption">
 				<h3>Präsent</h3>
 				<p>There is no "präsent" information in this verb currently.</p>
-				<%= link_to "Add Information", new_verb_present_path(verb), :class => "btn btn-sm btn-success" %>
+				<% if is_admin %>
+					<%= link_to "Add Information", new_verb_present_path(verb), :class => "btn btn-sm btn-success" %>
+				<% end %>
 			</div>
 		<% end %>
 	</div>
