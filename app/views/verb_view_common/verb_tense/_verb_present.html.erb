@@ -1,12 +1,12 @@
 <div class="col-xs-6 col-md-3">
   <div class="thumbnail">
-		<% unless present.nil? %>
+		<% unless verb_tense.nil? %>
 			<table class="table table-hover">
 				<caption class="caption-title"><h3>Präsent</h3></caption>
-				<%= render 'verb_view_common/thumbnail_partial', personalpronomen: personalpronomen, grammer: grammer, verb_tense: present %>
+				<%= render 'verb_view_common/thumbnail_partial', personalpronomen: personalpronomen, grammer: grammer, verb_tense: verb_tense %>
 				<tr>
 					<td colspan="2">
-						<%= link_to "Edit", edit_verb_present_path(verb, present), :class => "btn btn-sm btn-primary pull-right" %>
+						<%= link_to "Edit", edit_verb_present_path(verb, verb_tense), :class => "btn btn-sm btn-primary pull-right" %>
 					</td>
 				</tr>
 			</table>
