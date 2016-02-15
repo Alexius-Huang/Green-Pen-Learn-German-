@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<%= render 'verb_view_common/functional_links', verb: @verb %>
+	<%= render 'verb_view_common/functional_links', verb: @verb, is_admin: current_user.administrator %>
 	
 	<br>
 	<h1 class="caption-title"><%= @verb.title %></h1>
@@ -21,7 +21,7 @@
 						["past", 		@past, 		@personalpronomen_past,		 @grammer_past		],
 						["perfect", @perfect, @personalpronomen_perfect, @grammer_perfect	]
 					].each do |partial, verb_tense, personalpronomen, grammer| %>
-				<%= render "verb_view_common/verb_tense/verb_#{partial}", verb_tense: verb_tense, personalpronomen: personalpronomen, grammer: grammer, verb: @verb %>
+				<%= render "verb_view_common/verb_tense/verb_#{partial}", verb_tense: verb_tense, personalpronomen: personalpronomen, grammer: grammer, verb: @verb, is_admin: current_user.administrator %>
 			<% end %>
 		</div>
 	</div>

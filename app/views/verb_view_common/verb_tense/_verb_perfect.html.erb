@@ -15,7 +15,9 @@
 			<div class="caption">
 				<h3>Perfekt</h3>
 				<p>There is no "perfect" information in this verb currently.</p>
-				<%= link_to "Add Information", new_verb_perfect_path(verb), :class => "btn btn-sm btn-success" %>
+				<% if is_admin %>
+					<%= link_to "Add Information", new_verb_perfect_path(verb), :class => "btn btn-sm btn-success" %>
+				<% end %>
 			</div>
 		<% end %>
 	</div>

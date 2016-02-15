@@ -15,7 +15,9 @@
 			<div class="caption">
 				<h3>Past</h3>
 				<p>There is no "past" information in this verb currently.</p>
-				<%= link_to "Add Information", new_verb_past_path(verb), :class => "btn btn-sm btn-success" %>
+				<% if is_admin %>
+					<%= link_to "Add Information", new_verb_past_path(verb), :class => "btn btn-sm btn-success" %>
+				<% end %>
 			</div>
 		<% end %>
 	</div>
