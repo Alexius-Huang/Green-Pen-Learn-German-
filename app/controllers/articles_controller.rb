@@ -1,18 +1,17 @@
 class ArticlesController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	before_action :authenticate_admin!, except: [:index, :show]
-	before_action :find_user, except: [:index, :show]
 
 	def index
 		@articles = Article.all
 	end
 
 	def new
-		@article = @user.articles.new
+		@article = current_user.articles.new
 	end
 
 	def create
-		@article = @user.articles.create(article_params)
+		@article = current_user.articles.create(article_params)
 
 		if @article.save
 			redirect_to articles_path, notice: "New Article Has Successfully Created!"
@@ -50,9 +49,6 @@ class ArticlesController < ApplicationController
 
 	def article_params
 		params.require(:article).permit(:title, :content)
-
-	def find_user
-		@user = User.find(params[:user_id])
 	end
 
 	def authenticate_admin!
