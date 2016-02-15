@@ -1,9 +1,10 @@
 class PerfectsController < ApplicationController
 	before_action :authenticate_user!
+	before_action :authenticate_admin!
 	before_action :find_verb
 	before_action :setup_verb_tense_parameter
 
-	def new  
+	def new
 		@perfect = @verb.perfects.new
 	end
 
@@ -32,6 +33,13 @@ class PerfectsController < ApplicationController
 	end
 
 	private
+
+	def authenticate_admin!
+		unless current_user.administrator
+			redirect_to verbs_path, alert: "You are not allowed to perform this action!"
+		end
+	end
+
 
 	def find_verb
 		@verb = Verb.find(params[:verb_id])
