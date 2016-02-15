@@ -3,7 +3,7 @@
 		<% unless present.nil? %>
 			<table class="table table-hover">
 				<caption class="caption-title"><h3>Präsent</h3></caption>
-				<% personalpronomen.zip(grammer).each do |personalpronomen, grammer| %>
+				<% personalpronomen_present.zip(grammer_present).each do |personalpronomen, grammer| %>
 					<tr>
 						<th><%= personalpronomen %></th>
 						<td><%= grammer %></td>

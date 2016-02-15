@@ -3,7 +3,7 @@ class PresentsController < ApplicationController
 
 	def new  
 		@present = @verb.presents.new
-		@personalpronomen = [
+		@personalpronomen_present = [
 			"first_person", 
 			"second_person", 
 			"third_person",
@@ -12,7 +12,7 @@ class PresentsController < ApplicationController
 			"plural_third_person",
 			"description"
 		 ]
-		@grammer = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
+		@grammer_present = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 	def create
@@ -27,7 +27,7 @@ class PresentsController < ApplicationController
 
 	def edit
 		@present = @verb.presents.last
-		@personalpronomen = [
+		@personalpronomen_present = [
 			"first_person", 
 			"second_person", 
 			"third_person",
@@ -36,7 +36,7 @@ class PresentsController < ApplicationController
 			"plural_third_person",
 			"description"
 		 ]
-		@grammer = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
+		@grammer_present = [ "ich", "du", "er/es/sie", "wir", "ihr", "Sie/sie", "Further Explaination"]
 	end
 
 	def update
