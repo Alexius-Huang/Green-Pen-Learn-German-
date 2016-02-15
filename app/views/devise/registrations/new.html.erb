@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="col-md-offset-4 col-md-4">
-		<h1 class="caption-title">Sign up</h1>
+		<h1 class="caption-title">Sign Up</h1>
 		<hr>
 
 		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -12,9 +12,10 @@
 			    <%= f.input :password_confirmation, required: true %>
 			  </div>
 			</div>
-			  <div class="form-actions">
-			    <%= f.submit "Sign Up!", :class => "btn btn-warning", data: { disable_with: "Signing Up ..." } %>
-			  </div>
+			
+			<div class="form-actions">
+			  <%= f.submit "Sign Up!", :class => "btn btn-warning", data: { disable_with: "Signing Up ..." } %>
+			</div>
 		<% end %>
 
 		<%= render "devise/shared/links" %>
