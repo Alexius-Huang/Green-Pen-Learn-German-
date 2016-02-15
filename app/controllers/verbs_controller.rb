@@ -1,6 +1,7 @@
 class VerbsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	before_action :authenticate_admin!, except: [:index, :show]
+	before_action :is_admin?, only: [:index, :show]
 	
 	def index
 		@verbs = Verb.all
@@ -95,6 +96,14 @@ class VerbsController < ApplicationController
 	def authenticate_admin!
 		unless current_user.administrator
 			redirect_to verbs_path, alert: "You are not allowed to perform this action!"
+		end
+	end
+
+	def is_admin?
+		if !current_user.nil? && current_user.administrator
+			@is_admin = true
+		else
+			@is_admin = false
 		end
 	end
 
