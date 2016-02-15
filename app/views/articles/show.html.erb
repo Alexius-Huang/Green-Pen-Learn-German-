@@ -1,4 +1,10 @@
 <div class="container-fluid">
+	<%= link_to "Back", articles_path, :class => "btn btn-primary pull-right" %>
+	<% if current_user == @user %>
+		<%= link_to "Delete Article", article_path(@article), :method => :delete, :class => "btn btn-danger pull-right", data: { confirm: "Are you sure?" } %>
+		<%= link_to "Edit Article", edit_article_path(@article), :class => "btn btn-success pull-right" %>
+	<% end %>
+
 	<div class="col-md-offset-2 col-md-8">
 		<h1 class="caption-title"><%= @article.title %></h1>
 		<hr>

@@ -26,11 +26,11 @@ class ArticlesController < ApplicationController
 	end
 
 	def edit
-		@article = @user.articles.find(params[:id])
+		@article = Article.find(params[:id])
 	end
 
 	def update
-		@article = @user.article.find(params[:id])
+		@article = Article.find(params[:id])
 
 		if @article.update(article_params)
 			redirect_to article_path(@article)
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def destroy
-		@article = @user.article.find(params[:id])
+		@article = Article.find(params[:id])
 		article_title = @article.title
 		@article.destroy
 		redirect_to articles_path, alert: "The Article : #{article_title} has been Deleted!"
