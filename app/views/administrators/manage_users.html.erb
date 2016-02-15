@@ -1,0 +1,29 @@
+<div class="container-fluid">
+	<div class="col-md-offset-3 col-md-6">
+		<h1 class="caption-title">Manage Users</h1>
+		<hr>
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>User's Name</th>
+					<th>User's Email</th>
+					<td>Manage Operation</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @users.each.with_index do |user, index| %>
+					<tr>
+						<td><%= index + 1 %></td>
+						<td><%= user.username %></td>
+						<td><%= user.email %></td>
+						<td><%= link_to "Add as Admin", administrators_manage_users_path(user), :method => :patch, :class => "btn btn-success btn-xs", data: { confirm: "Are you sure to add #{user.username} as a administrator?" } %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		
+	</div>
+</div>

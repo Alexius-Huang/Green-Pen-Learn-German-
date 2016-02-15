@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  get 'administrators/manage_users'
+  get 'administrators/manage_admins'
+  patch 'administrators/manage_users.:id', to: 'administrators#join'
+  patch 'administrators/manage_admins.:id', to: 'administrators#cancel' 
+
   root 'home#index'
 
   resources :verbs do
