@@ -67,6 +67,27 @@ body {
 		}
 	}
 
+	div.panel-heading {
+		background-color: rgba(23,74,41,0.8);
+		color: white;
+		border-color: rgba(23,74,41,1);
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+
+	div.panel-body {
+		background-color: rgba(255,255,255,0.7);
+		border-color: rgba(255,255,255,1);
+		margin-bottom: 40px;
+	}
+
+	div.panel-heading:hover {
+		background-color: rgba(23,72,41,0.9);
+	}
+	div.panel-body:hover {
+		background-color: rgba(255,255,255,0.9);
+	}
+
 	div.thumbnail {
 		background-color: rgba(255,255,255,0.8);
 	}
