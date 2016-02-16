@@ -53,6 +53,10 @@ class ArticlesController < ApplicationController
 		params.require(:article).permit(:title, :content)
 	end
 
+	def comment_params
+		params.require(:comment).permit(:content)
+	end
+
 	def authenticate_admin!
 		unless current_user.administrator
 			redirect_to verbs_path, alert: "You are not allowed to perform this action!"

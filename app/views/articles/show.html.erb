@@ -22,12 +22,7 @@
 		<div class="col-md-offset-3 col-md-6">
 			<br>
 			<hr>
-			<div class="panel-heading">
-				Comment
-				<% unless current_user.nil? %>
-					<%= link_to "New Comment", new_article_comment_path(@article), :class => "pull-right", :style => "color: white" %>
-				<% end %>
-			</div>
+			<div class="panel-heading">Comment</div>
 			<% @comments.each do |comment| %>
 				<div class="panel-body" style="margin-bottom: 0px;">
 					<h5>Created by <%= comment.user.username %> At <%= comment.created_at.to_s(:long) %></h5>
@@ -39,6 +34,9 @@
 					</p>
 				</div>
 			<% end %>
+			<div class="panel-body">
+				<%= render 'comments/form', article: @article %>
+			</div>
 		</div>
 	</div>
 
