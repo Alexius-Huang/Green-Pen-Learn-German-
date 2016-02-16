@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
   get 'administrators/manage_users'
   get 'administrators/manage_admins'
