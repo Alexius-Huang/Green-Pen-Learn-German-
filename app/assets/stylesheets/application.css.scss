@@ -35,7 +35,7 @@ body {
   	color: black;
   	text-align: center;
   }
-	
+
 	table.table {
 		background-color: rgba(255,255,255,0.8);
 		border-radius: 5px;
@@ -48,79 +48,72 @@ body {
 	form {
 		padding-bottom: 500px;
 		
-		div {
-			
-			.cancel-account {
-				background-color: rgba(255,255,255,0.8);
-				padding: 10px;
-				margin: 10px;
-				border-radius: 5px;
-			}
-
-			.cancel-account:hover {
-				background-color: rgba(226,47,47,0.6);
-				color: #fff;
-				padding: 10px;
-				margin: 10px;
-				border-radius: 5px;
-				a {
-					color: #fcd3ce;
-					text-decoration: none;
-				}
-
-				a:hover {
-					color: #fff8e7;
-				}
-			}
-		}
-	}
-
-	div {
-		.panel-heading {
-			background-color: rgba(23,74,41,0.8);
-			color: white;
-			border-color: rgba(23,74,41,1);
-			border-top-left-radius: 8px;
-			border-top-right-radius: 8px;
-		}
-
-		.panel-body {
-			background-color: rgba(255,255,255,0.7);
-			border-color: rgba(255,255,255,1);
-			margin-bottom: 40px;
-		}
-	
-		.panel-heading:hover {
-			background-color: rgba(23,72,41,0.9);
-		}
-		
-		.panel-body:hover {
-			background-color: rgba(255,255,255,0.9);
-		}
-
-		.thumbnail {
+		div.cancel-account {
 			background-color: rgba(255,255,255,0.8);
-		}
-
-		.thumbnail:hover, .optional:hover{
-			background-color: rgba(38,101,72,0.5);
-			p,h1,h2,h3,h4,h5,h6,label {
-				color: white;
-			}
-		}
-
-		.required:hover {
-			background-color: rgba(201,139,132,0.5);
-			p,h1,h2,h3,h4,h5,h6,label {
-				color: white;
-			}
-		}
-	
-		.optional, .required {
-			background-color: rgba(255,255,255,0.8);		
 			padding: 10px;
+			margin: 10px;
 			border-radius: 5px;
 		}
+
+		div.cancel-account:hover {
+			background-color: rgba(226,47,47,0.6);
+			color: #fff;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 5px;
+			a {
+				color: #fcd3ce;
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: #fff8e7;
+			}
+		}
 	}
 
+	div.panel-heading {
+		background-color: rgba(23,74,41,0.8);
+		color: white;
+		border-color: rgba(23,74,41,1);
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+
+	div.panel-body {
+		background-color: rgba(255,255,255,0.7);
+		border-color: rgba(255,255,255,1);
+		margin-bottom: 40px;
+	}
+
+	div.panel-heading:hover {
+		background-color: rgba(23,72,41,0.9);
+	}
+	div.panel-body:hover {
+		background-color: rgba(255,255,255,0.9);
+	}
+
+	div.thumbnail {
+		background-color: rgba(255,255,255,0.8);
+	}
+
+	div.thumbnail:hover, div.optional:hover{
+		background-color: rgba(38,101,72,0.5);
+		p,h1,h2,h3,h4,h5,h6,label {
+			color: white;
+		}
+	}
+
+	div.required:hover {
+		background-color: rgba(201,139,132,0.5);
+		p,h1,h2,h3,h4,h5,h6,label {
+			color: white;
+		}
+	}
+	
+	div.optional, div.required {
+		background-color: rgba(255,255,255,0.8);		
+		padding: 10px;
+		border-radius: 5px;
+	}
 }	
