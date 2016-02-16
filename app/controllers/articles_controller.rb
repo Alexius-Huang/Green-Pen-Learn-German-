@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find(params[:id])
 		@user = @article.user
+		@comments = @article.comments
 	end
 
 	def edit
