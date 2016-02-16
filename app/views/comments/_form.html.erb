@@ -1,7 +1,7 @@
 <div class="ajax-form">
-	<%= simple_form_for [article, Comment.new], remote: true do |f| %>
+	<%= simple_form_for [article, article.comments.new], remote: true do |f| %>
 		<div class="form-group">
-			<%= f.input :content, input_html: { :class => "form-control" } %>
+			<%= f.input :content, placeholder: "Write a comment...", input_html: { :class => "form-control" } %>
 		</div>
 		<%= f.submit "Submit", :class => "btn btn-success pull-right", data: { disable_with: "Submitting..." } %>
 	<% end %>
