@@ -1,0 +1,9 @@
+<div class="panel-body comment-display" style="margin-bottom: 0px;">
+	<h5>Created by <%= comment.user.username %> At <%= comment.created_at.to_s(:long) %></h5>
+	<p>
+		<%= comment.content %>
+		<% if comment.user == current_user %>
+			<%= render 'comments/links', comment: comment %>
+		<% end %>
+	</p>
+</div>
