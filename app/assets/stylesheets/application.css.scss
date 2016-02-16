@@ -72,6 +72,19 @@ body {
 		}
 	}
 
+	a#comment-link {
+		color: white;
+	}
+
+	a#comment-link:hover {
+		text-decoration: none;
+	}
+	
+
+	div#comment-form {
+		display: none;
+	}
+
 	div.ajax-form form {
 		padding-bottom: 0px;
 	}
@@ -119,5 +132,9 @@ body {
 		background-color: rgba(255,255,255,0.8);		
 		padding: 10px;
 		border-radius: 5px;
+	}
+
+	div.gap {
+		margin-bottom: 150px;
 	}
 }	

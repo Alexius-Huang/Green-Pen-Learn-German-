@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
 		if @comment.save
 			@comment.update(:user_id => current_user.id)
 			respond_to do |format|
-				format.html { redirect_to article_path(@article) }
+				format.html { redirect_to @article }
 				format.js
 			end
 		end

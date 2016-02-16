@@ -22,22 +22,17 @@
 		<div class="col-md-offset-3 col-md-6">
 			<br>
 			<hr>
-			<div class="panel-heading">Comment</div>
-			<% @comments.each do |comment| %>
-				<div class="panel-body" style="margin-bottom: 0px;">
-					<h5>Created by <%= comment.user.username %> At <%= comment.created_at.to_s(:long) %></h5>
-					<p>
-						<%= comment.content %>
-						<% if comment.user == current_user %>
-							<%= render 'comments/links', comment: comment %>
-						<% end %>
-					</p>
-				</div>
-			<% end %>
-			<div class="panel-body">
+			<a href="#" id="comment-link"><div class="panel-heading">Comment</div></a>
+
+			<div id="comments">
+				<%= render @comments %>
+			</div>
+
+			<div class="panel-body" id="comment-form">
 				<%= render 'comments/form', article: @article %>
 			</div>
 		</div>
 	</div>
 
+	<div class="gap"></div>
 </div>
