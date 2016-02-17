@@ -18,7 +18,11 @@
 		<div class="col-md-offset-2 col-md-8">
 			<br>
 			<hr>
-			<a href="#" id="comment-link"><div class="panel-heading">Comment</div></a>
+			<% unless current_user.nil? %>
+				<a href="#" id="comment-link"><div class="panel-heading">Comment</div></a>
+			<% else %>
+				<div class="panel-heading"><%= link_to "Please Sign In Before Commenting", new_user_session_path, style: "color: white" %></div>			
+			<% end %>
 
 			<div id="comments">
 				<%= render @comments %>
